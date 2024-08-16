@@ -73,7 +73,7 @@ class ContaBancaria:
 ```
 
 ### Factory Pattern
-Com este padrão é possível encapsular a lógia criação de `ContaBancaria` para criar
+Com este padrão é possível encapsular a lógia para criação de `ContaBancaria` para criar
 diferentes tipos de conta, `poupança`, `corrente` e `investimento`, por exemplo.
 ```python
 class ContaBancariaFactory:
@@ -90,17 +90,17 @@ class ContaBancariaFactory:
 ```
 
 ## Uso
-Para uso deste projeto você deve fazer um clone deste repositório.
+Clone o repositório repositório.
 ```sh
 git clone https://github.com/humbertoarndt/Processo-Seletivo-Investment-Services.git <dir>
 ```
 
-Acessar o diretório criado na pasta `caso_logica`.
+Acesse o diretório criado na pasta `caso_logica`.
 ```sh
 cd <dir>/caso_logica
 ```
 
-O programa pode ser executado com a seguinte instrução.
+Execute o programa com a seguinte instrução.
 ```sh
 py main.py
 ```
