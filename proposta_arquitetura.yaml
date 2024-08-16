@@ -3,14 +3,15 @@
         "LOAD BALANCER" (Multi Region - AZ):
             "CLUSTER KUBERNETES":
                 "CONTAINERS/POD":
-                    POST transfer-service-app /transfer > Envia para fila(Kafka, SQS ou RabbitMQ).
+                    POST transfer-service-app /transfer
+                        > Envia para fila(Kafka, SQS ou RabbitMQ).
                         > Armazena no banco de dados (RDS).
                     GET account-service-app /account/{clientId}
                         > Faz leitura na base de dados informações do cliente (Conta, saldo, extrato).
                     GET / POST account-service-app /acount/{clientId}/saldo
                         > Faz leitura na base de dados informações do cliente (Conta, saldo, extrato).
                         > Faz escrita na base de dados de saldo
-                    GET account-service-app /account{clientId}/history
+                    GET account-service-app /account/{clientId}/history
                         > Consulta dados no banco de dados (RDS) e retorna o histórico de transações
 
 Resiliente - uptime 99%
