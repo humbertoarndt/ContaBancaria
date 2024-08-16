@@ -11,7 +11,7 @@ ou um resultado diferente do esperado. Listei abaixo alguns dos erros solucionad
 * Variáveis usadas sem declaração, ou com nome incorreto;
 * Laço de repetição baseado em entrada do usuário com divergência entre suas opções
 e condicionais executadas;
-* Chamada de função inexistentes;
+* Chamada de função inexistente;
 
 ## Entendimento do Código
 Para entendimento do código o meu processo sempre envolve sua documentação, usei
@@ -90,7 +90,7 @@ class ContaBancariaFactory:
 ```
 
 ## Uso
-Clone o repositório repositório.
+Clone o repositório.
 ```sh
 git clone https://github.com/humbertoarndt/Processo-Seletivo-Investment-Services.git <dir>
 ```
@@ -105,5 +105,5 @@ Execute o programa com a seguinte instrução.
 py main.py
 ```
 
-O porgrama pode ser encerrado ao entrar a opção `4` em seu terminal, ou com `Ctrl + C` para
+O programa pode ser encerrado ao entrar a opção `4` em seu terminal, ou com `Ctrl + C` para
 interromper sua execução pelo envio de um sinal `SIGINT`.
