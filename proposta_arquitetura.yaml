@@ -1,0 +1,25 @@
+"USER":
+    "API GATEWAY":
+        "LOAD BALANCER" (Multi Region - AZ):
+            "CLUSTER KUBERNETES":
+                "CONTAINERS/POD":
+                    POST transfer-service-app /transfer > Envia para fila(Kafka, SQS ou RabbitMQ).
+                        > Armazena no banco de dados (RDS).
+                    GET account-service-app /account/{clientId}
+                        > Faz leitura na base de dados informações do cliente (Conta, saldo, extrato).
+                    GET / POST account-service-app /acount/{clientId}/saldo
+                        > Faz leitura na base de dados informações do cliente (Conta, saldo, extrato).
+                        > Faz escrita na base de dados de saldo
+                    GET account-service-app /account{clientId}/history
+                        > Consulta dados no banco de dados (RDS) e retorna o histórico de transações
+
+Resiliente - uptime 99%
+- Escabilidade
+- Alta disponibilidade
+- Auto escalonamento
+- Multi Região São Paulo - Zonas: (az1, az2, az3)
+
+Cluster:
+    - instancias: node-1(4cpu/4gb) (az1) - namespace(container(pods(aplicacoes))) - qtd de pods 4 - 4 reqs - 1cpu/1gb
+                  node-2(4cpu/4gb) (az2) - namespace(container(pods(aplicacoes))) - qtd de pods 4 - 4 reqs - 1cpu/1gb
+                  node-3(4cpu/4gb) (az3) - namespace(container(pods(aplicacoes))) - qtd de pods 4 - 4 reqs - 1cpu/1gb

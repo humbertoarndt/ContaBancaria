@@ -1,0 +1,34 @@
+Para projetar a arquitetura de um sistema de tranferência PIX com as especificações
+fornecidas, podemos seguir uma abordagem baseada em microsserviços, utilizando
+tecnologias que garatem resiliência, armazaenamento de histórico, loggin e métricas.
+Abaixo está uma proposta de arquitetura:
+
+> Componentes da arquitetura
+1_ API Gateway: Gerencia as requisições externas e roteia para os serviços internos.
+2_ Serviço de Transferência: Recebe as ordens de transferência e coordena o débito e crédito entre contas.
+3_ Serviço de Contas: Gerencia as contas dos usuários, incluindo saldo e histórico de transações.
+4_ Serviço de Histórico: Armazena o histórico de todas as transações por 5 anos.
+5_ Banco de Dados: Armazena dados das contas e transações.
+6_ Sistema de Logs e Métricas: Coleta e armazena logs e métricas para monitoramento e análise.
+
+> Tecnologias Sugeridas
+- API Gateway: NGINX ou AWS API Gateway
+- Microsserviços: Spring Boot (Java) ou Express (Node.js)
+- Banco de Dados: PostgreSQL para dados transacionais e Amazon S3 para armazenamento de histórico
+- Mensageria: Apache Kafka ou RabbitMQ para comunicação assíncrona entre serviços
+- Logs e Métricas: ELK Stack (Elasticsearch, Logstash, Kibana) e Prometheus/Grafana
+
+> Fluxo de Trabalho
+1_ Recebimento da Ordem de Transferência:
+    - O cliente envia uma ordem de transferência para o API Gateway.
+    - O API Gateway roteia a requisição para o Serviço de Transferência.
+2_ Processamento da Transferência:
+    - O Serviço de Transferência valida a ordem e solicita o débito na conta do remetente ao Serviço de Contas.
+    - O Serviço de Contas verifica o saldo e, se suficiente, debita o valor e retorna a confirmação.
+    - O Serviço de Transferência então solicita o crédito na conta do destinatário ao Serviço de Contas.
+    - O Serviço de Contas credita o valor na conta do destinatário e retorna a confirmação.
+3_ Armazenamento do Histórico:
+    - O Serviço de Transferência envia uma mensagem para o Serviço de Histórico com os detalhes da transação.
+    - O Serviço de Histórico armazena a transação no banco de dados e em um armazaenamento de longo prazo (Ex Amazon S3)
+4_ Logs e Métricas:
+    - Todos os serviços enviam logs e métricas para o sistema de monitoramento (ELK Stack e Prometheus/Grafana).
