@@ -9,7 +9,7 @@ ou um resultado diferente do esperado. Listei abaixo alguns dos erros solucionad
 * Função declarada indevidamente;
 * Strings com aspas `"` não fechadas;
 * Variáveis usadas sem declaração, ou com nome incorreto;
-* Laço de repetição baseado entrada do usuário com divergência entre suas opções
+* Laço de repetição baseado em entrada do usuário com divergência entre suas opções
 e condicionais executadas;
 * Chamada de função inexistentes;
 
@@ -78,7 +78,7 @@ diferentes tipos de conta, `poupança`, `corrente` e `investimento`, por exemplo
 ```python
 class ContaBancariaFactory:
     @staticmethod
-    def criar_conta(tipo: str, slado_inicial: float) -> ContaBancaria:
+    def criar_conta(tipo: str, saldo_inicial: float) -> ContaBancaria:
         if tipo == 'poupanca':
             return ContaPoupanca(saldo_inicial)
         elif tipo == 'corrente':
