@@ -4,7 +4,7 @@
 def obter_valor_input(mensagem: str) -> float:
     """
     Função para capturar entrada de texto do usuário, e converter para o tipo
-    float. Caso não seja possível converter o valor capturado um erro uma exceção
+    float. Caso não seja possível converter o valor capturado uma exceção
     é exibida.
 
     Args:

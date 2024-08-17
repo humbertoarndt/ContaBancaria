@@ -1,7 +1,7 @@
 # Processo Seletivo Investment Services
 
 ## Caso de Arquitetura AWS
-Você recebeu a missão de Projetar a arquitetura do PIX e recebeu os seguintes requisitos funcionais e não funcionais:
+Você recebeu a missão de **projetar a arquitetura do PIX**, com os seguintes requisitos funcionais e não funcionais:
 * O Sistema deverá ser capaz de receber a ordem de transferência e efetivar o débito(-) na conta do solicitante antes de creditar(+) a conta do cliente destinatário;
 * Ser compatível com Android e IOS;
 * Início com 100 transações diárias, com perspectiva de crescimento para 20 milhões por dia em até 1 ano;

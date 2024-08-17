@@ -11,7 +11,7 @@ class TestContaBancaria(unittest.TestCase):
     """
     Teste unitários para a classe ContaBancaria.
 
-    O testes garatem que as operações de depósio, saque e transferência funcionem
+    Os testes garantem que as operações de depósio, saque e transferência funcionem
     conforme o esperado em diferentes cenários.
     """
 

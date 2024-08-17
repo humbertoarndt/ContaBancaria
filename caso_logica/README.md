@@ -16,15 +16,15 @@ e condicionais executadas;
 ## Entendimento do Código
 Para entendimento do código o meu processo sempre envolve sua documentação, usei
 **Docstrings** para descrever o comportamento das funções, assim como seus parâmetros
-e retornos. Também estruturei o seguindo o conhecimento que possuo da **PEP 8**.
+e retornos. Também estruturei o código seguindo o conhecimento que possuo da **PEP 8**.
 
 ## Separar Código
-Decidi tornar o código mais **modular** ao separá-lo em arquivos diferentes, cada 
+Decidi tornar o código **modular** ao separá-lo em arquivos diferentes, cada 
 um responsável por uma única funcionalidade. Isso ajuda em sua **manutenção**, pois 
 alterações em uma parte do código são menos propensas a causar problemas em outras
-partes. Arquivos menores também possuem uma **legibilidade** maior e são mais fáceis
-de entender, por fim é mais fácil adicionar novas funcionalidades. O que torna sua 
-**escabilidade** mais fácil.
+partes. Arquivos menores também possuem uma **legibilidade** maior e são melhores de
+entender, por fim é mais fácil adicionar novas funcionalidade, o que deu mais 
+**escabilidade** ao projeto.
 
 ## Testes Unitários
 Para garantir que as partes do código funcionam como esperado implementei testes
@@ -36,12 +36,12 @@ py -m unittest discover -s tests
 
 ## Padrões de Design
 Consigo entender o valor de se aplicar padrões de design para ajudar na manutenção
-e expansão de projetos. No caso da classe ContaBancaria encontrei as oportunidades
+e expansão de projetos. No caso da classe `ContaBancaria` encontrei as oportunidades
 abaixo:
 
 ### Strategy Pattern
-Com este padrão é possível adicionar novas operações bancárias como `investir`, através
-de um método abstrato.
+Com este padrão é possível adicionar novas operações bancárias, através de um 
+**método abstrato** e **polimorfismo**.
 ```python
 from abc import ABC, abstractmethod
 
@@ -73,8 +73,8 @@ class ContaBancaria:
 ```
 
 ### Factory Pattern
-Com este padrão é possível encapsular a lógia para criação de `ContaBancaria` para criar
-diferentes tipos de conta, `poupança`, `corrente` e `investimento`, por exemplo.
+Com este padrão é possível **encapsular** a lógia para criação de uma `ContaBancaria`
+de diferentes tipos como: `poupanca`, `corrente` e `investimento`, por exemplo.
 ```python
 class ContaBancariaFactory:
     @staticmethod
@@ -105,5 +105,5 @@ Execute o programa com a seguinte instrução.
 py main.py
 ```
 
-O programa pode ser encerrado ao entrar a opção `4` em seu terminal, ou com `Ctrl + C` para
-interromper sua execução pelo envio de um sinal `SIGINT`.
+O programa pode ser encerrado ao entrar com a opção `4` em seu terminal, ou com `Ctrl + C` para
+interromper sua execução.

@@ -3,7 +3,7 @@
 # ==============================================================================
 class ContaBancaria:
     """
-    Classe que representa uma conta bancaria simples.
+    Classe que representa uma conta bancária simples.
 
     A classe 'ContaBancaria' permite realizar operações básicas como depósito,
     saque e transferência entre contas. Cada conta possui um saldo inicial que
@@ -29,7 +29,7 @@ class ContaBancaria:
         Inicializa a ContaBancaria com um saldo inicial.
 
         Args:
-            saldo_inicial (int, optional): O saldo inicial da conta. Por padrão 0.
+            saldo_inicial (float, optional): O saldo inicial da conta. Por padrão 0.
         """
         self.saldo = saldo_inicial
 
@@ -52,7 +52,7 @@ class ContaBancaria:
         """
         Função para sacar um valor de uma ContaBancaria.
 
-        A função verifica se existe saldo disponível para ser sacado. Se houver
+        A função verifica se existe saldo disponível para ser sacado. Se houver,
         o valor é removido do saldo atual.
 
         Args:
